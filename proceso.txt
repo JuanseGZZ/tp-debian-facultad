@@ -1,0 +1,29 @@
+1) cambio de pass ->
+
+-Entre con la letra "e" a la edicion de las opciones de arranque 
+-Le configure al final de linux -> "init=/bin/bash" lo que le indica al sistema que arranque el sistema en el bash root
+- le puse mount -o remount,rw / para pasar de modo lectura a modo lectura/escritura el sistema
+-le puse passwd para cambiar la contraseña del root a palermo.
+- reinicie y me loguie como root.
+
+cambio a tpserver->
+
+-vi /etc/hostname -> cambie a tpserver
+-vi /etc/hosts -> al lado del ip lan le cambie por tpserver
+-reinicie
+
+
+
+2) primero modifique los /etc/apt/sources.list para que esten actualizados
+
+deb http://deb.debian.org/debian/ bullseye main contrib non-free
+deb http://deb.debian.org/debian/ bullseye-updates main contrib non-free
+deb http://security.debian.org/debian-security bullseye-security main contrib non-free
+
+despues updatie y upgradie
+
+A) instale y configure el ssh
+
+-apt install openssh-server
+-Voy a cofigurarlo a -> /etc/ssh/sshd_config
+- pongo PerdmitRootLoguin yes
